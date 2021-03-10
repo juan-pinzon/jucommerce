@@ -1,6 +1,7 @@
 const express = require('express')
 const path = require('path')
 const boom = require('boom')
+const debug = require('debug')('app:server')
 //const expressJsx = require('./express-jsx')
 
 const productsRouter = require('./routes/views/products')
@@ -51,5 +52,5 @@ app.use(errorHandler)
 
 // init server
 const server = app.listen(8000, function() {
-	console.log(`Listening on http://localhost:${server.address().port}`)
+	debug(`Listening on http://localhost:${server.address().port}`)
 })
