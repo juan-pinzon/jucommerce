@@ -2,6 +2,7 @@ const express = require('express')
 const path = require('path')
 const boom = require('boom')
 const debug = require('debug')('app:server')
+const helmet = require('helmet')
 //const expressJsx = require('./express-jsx')
 
 const productsRouter = require('./routes/views/products')
@@ -13,6 +14,9 @@ const isRequestAjaxOrApi = require('./utils/isRequestAjaxOrApi')
 
 // app
 const app = express()
+
+// middlewares
+app.use(helmet())
 app.use(express.json())
 
 // static files
