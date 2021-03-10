@@ -1,0 +1,5 @@
+h1
+	p #{error.message}
+p #{error.status}
+if error.stack
+	pre #{error.stack}
